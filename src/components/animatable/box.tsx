@@ -30,7 +30,7 @@ export default function AnimateBox() {
 							setLeftHover((prev)=> ({really: !prev.really}))
 				}}
 				variants={leftBox}
-				animate="leftbox"
+				animate="leftBox"
 				className="w-32 h-32 bg-blue-700"
 			/> 
 
