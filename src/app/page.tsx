@@ -1,5 +1,4 @@
 'use client';
-
 import { Cover, Projects } from "@/components/home";
 import clsx from "clsx";
 
@@ -12,6 +11,7 @@ export default function Page() {
 		'Leetcode',
 		'WhoAmI',
 	];
+
 	return <div className={"flex flex-col"}>
 		<div className={"relative h-[80vh] bg-red-100"}>
 			<Cover/>
