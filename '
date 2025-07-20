@@ -1,0 +1,117 @@
+"use client";
+import Link from "next/link"
+import { motion } from "motion/react"
+import { Dispatch, SetStateAction, useState } from "react";
+import clsx from "clsx";
+
+const style = {
+	hovered: "#d1b124",
+	selected: "#d1b124", 
+}
+
+export default function NavBar() {
+	const [selectedTab, setSelectedTab] = useState(tabs[0])
+
+	return (
+		<div
+			className="flex h-20 text-amber-600 bg-orange-400"
+		>
+		  {tabs.map((tab)=> (
+				<Tab
+				  selectedTab={selectedTab} 
+					onSelected={setSelectedTab}
+					key={tab.label} tab={tab}
+				/>))}
+		</div>
+	)
+}
+
+
+
+type tab = {
+	label: string,
+	icon: string,
+	href: string,
+}
+
+function Tab({
+	tab,
+	selectedTab,
+	onSelected,
+}: {
+	tab: tab
+	selectedTab: tab,
+	onSelected: Dispatch<SetStateAction<tab>>,
+}) {
+	return (
+		<motion.div
+		  className="select-none" 
+			whileHover={{
+				backgroundColor: style.hovered,
+			}}
+			style={{
+				backgroundColor: tab === selectedTab ? style.selected : "#eee"
+			}}
+			onClick={()=>onSelected(tab)}
+		>
+			<motion.div
+				className={"flex flex-col justify-center items-center p-3 w-20 overflow-clip"}
+			>
+				<Link href={tab.href}>
+						{tab.label.slice(0,9)} 
+				</Link>
+				{
+					tab === selectedTab && 
+					<motion.div
+						layoutId="tabIcon"
+						id="tabIcon"
+					>
+						{tab.icon}
+					</motion.div>
+				}
+			</motion.div>
+				{
+					tab === selectedTab && 
+					<motion.div
+						layoutId="underLine"
+						id="underLine"
+						className={clsx("border-2 border-amber-800")}
+					/>
+				}
+		</motion.div>
+	)
+}
+
+
+const tabs: tab[] = [
+	{
+		label: "logo",
+		icon: "💻",
+		href: "/",
+	},
+	{
+		label: "item1",
+		icon: "🍌",
+		href: "/",
+	},
+	{
+		label: "item2",
+		icon: "🍌",
+		href: "/",
+	},
+	{
+		label: "item3",
+		icon: "🍌",
+		href: "/",
+	},
+	{
+		label: "item4",
+		icon: "🍌",
+		href: "/",
+	},
+	{
+		label: "item5item5item5item5item5",
+		icon: "🍌",
+		href: "/",
+	},
+]
