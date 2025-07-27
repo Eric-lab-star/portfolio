@@ -8,11 +8,13 @@ export default async function Page() {
 	const posts = await getblogPosts()
 
 	return (
-	  <div className={""}>
-		  <ul>
-				{posts.map((p) => (
-					<Link key={p.blog} href={p.blog}>{p.blog}</Link>
-				)) }
+	  <div className={"prose prose-slate"}>
+		  <ul className="flex flex-col text-lg">
+				{
+					posts.map((p) => (
+					<Link className="" key={p.blog} href={p.blog}><li className="p-3">{p.blog}</li></Link>
+					))
+				}
 			</ul>
 
 		</div>

@@ -1,7 +1,9 @@
 import {compile} from '@mdx-js/mdx'
 import { readdir, readFile, writeFile} from 'node:fs/promises'
 import path  from 'node:path'
+import rehypeStarryNight from 'rehype-starry-night'
 import remarkFrontmatter from 'remark-frontmatter'
+import remarkGfm from 'remark-gfm'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 
@@ -14,13 +16,13 @@ export async function compileMdxToJsx() {
 		const filePath = path.join(dirname, f)
 		const jsxFileObj = await compile(await readFile(filePath), {
 			jsx: true,
-			remarkPlugins: [remarkFrontmatter, [remarkMdxFrontmatter, {name: 'matter'}]]
+			remarkPlugins: [remarkGfm, remarkFrontmatter, [remarkMdxFrontmatter, {name: 'matter'}]],
+			rehypePlugins: [rehypeStarryNight]
 		})
 		const outputDirname= 'mdxToJs'
 		jsxFileObj.path = path.join(outputDirname, `${path.parse(f).name}.jsx`)
 		await writeFile(jsxFileObj.path, jsxFileObj.value)
 	})
-
 
 }
 

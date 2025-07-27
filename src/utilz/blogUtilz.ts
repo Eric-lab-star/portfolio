@@ -2,7 +2,6 @@ import { readdir } from "node:fs/promises"
 import path from "node:path"
 
 export async function getblogPosts() {
-	
 	const dir = path.join('mdxToJs')
 	const files = await readdir(dir)
 	return files.map((f) => {
@@ -10,4 +9,6 @@ export async function getblogPosts() {
 		return {blog: `${name}`}
 	})
 }
+
+
 
