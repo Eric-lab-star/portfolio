@@ -1,29 +1,23 @@
-'use client';
-import { Cover, Projects } from "@/components/home";
-import clsx from "clsx";
+import { getblogPosts } from "@/utilz/blogUtilz"
+import { compileMdxToJsx } from "./remark.mjs"
+import Link from "next/link"
 
 // Home 
-export default function Page() {
-	const projectNames = [
-		'Javascript',
-		'Java',
-		'Rust',
-		'Leetcode',
-		'WhoAmI',
-	];
+export default async function Page() {
+	await compileMdxToJsx()
+	const posts = await getblogPosts()
 
-	return <div className={"flex flex-col"}>
-		<div className={"relative h-[80vh] bg-red-100"}>
-			<Cover/>
-			<div className="absolute bottom-3 text-yellow-400 text-3xl">
-				<p>Be ready to shine</p>
-				<p>A Collection of my work</p>
-			</div>
+	return (
+	  <div className={""}>
+		  <ul>
+				{posts.map((p) => (
+					<Link key={p.blog} href={p.blog}>{p.blog}</Link>
+				)) }
+			</ul>
+
 		</div>
-		<div className={clsx("h-max bg-red-300 grid gap-4", `grid-row-${projectNames.length}`)}>
-			{projectNames.map(name => <Projects key={name} projectName={name}/>)}
-		</div>
-		<div className="h-40 bg-red-500">footer</div>
-	</div>
+	)
 }
+
+
 

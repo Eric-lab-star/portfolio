@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const d2coding = localFont({
+	src: [
+		{
+			path: '../../public/D2Coding_1.3.2.ttf',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: '../../public/D2CodingBold_1.3.2.ttf',
+			weight: '400',
+			style: 'bold',
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+		}
+	]
+})
+
 
 export const metadata: Metadata = {
-  title: "Ideal Portfolio",
-  description: "Collection of my works",
+  title: "Dev Life",
+  description: "developer life is written here",
 };
 
 export default function RootLayout({
@@ -24,11 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-			  <NavBar/>
+    <html lang="ko">
+      <body className={d2coding.className} >
+		  	<Link href="/">
+				  <h1 className="text-3xl m-3">Developer Blog</h1>
+				</Link>	
         {children}
       </body>
     </html>

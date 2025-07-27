@@ -19,7 +19,7 @@ export function Projects({projectName}: {projectName: string}) {
 			}}
 		  className="select-none text-2xl ml-4 mt-2"
 		>
-		  <Link href={`/${projectName.toLowerCase()}`}>{projectName}</Link>
+		  <Link href={`/${projectName.toLowerCase()}`}>{projectName} Project Logs</Link>
 		</motion.div>
 		<div className="flex flex-col">
 		  {"contents"}

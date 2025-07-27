@@ -20,7 +20,7 @@ export default function NavBar() {
 
 	return (
 		<div
-			className="flex h-20 text-amber-600"
+			className=" flex h-20 text-amber-600"
 			style={{
 				backgroundColor: style.default
 			}}
@@ -54,7 +54,7 @@ function Tab({
 }) {
 	return (
 		<Link href={tab.href}
-		 className="text-center"
+		 className="text-center border-amber-800"
 		>
 			<motion.div
 			  layout
@@ -89,33 +89,28 @@ function Tab({
 
 const tabs: tab[] = [
 	{
-		label: "logo",
+		label: "Devlog",
 		icon: "💻",
 		href: "/",
 	},
 	{
-		label: "item1",
+		label: "Js",
 		icon: "🍌",
-		href: "/",
+		href: "/javascript",
 	},
 	{
-		label: "item2",
+		label: "Java",
 		icon: "🍌",
-		href: "/",
+		href: "/java",
 	},
 	{
-		label: "item3",
+		label: "Rust",
 		icon: "🍌",
-		href: "/",
+		href: "/rust",
 	},
 	{
-		label: "item4",
+		label: "Who am I",
 		icon: "🍌",
-		href: "/",
-	},
-	{
-		label: "item5item5item5item5item5",
-		icon: "🍌",
-		href: "/",
+		href: "/whoami",
 	},
 ]
