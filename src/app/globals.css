@@ -1,4 +1,2 @@
 @import "tailwindcss";
-@import "./syntaxHighlighter.module.css"
-
-
+@import "./syntaxHighlighter_dark.module.css"

@@ -6,11 +6,11 @@ export default async function Page({
 }: {
 	params: Promise<{ blog: string }>
 }) {
-
 	const { blog } = await params
 	const  {default: Post, matter} = await import(`../../../mdxToJs/${blog}.jsx`);
+	console.log(matter)
 	return (
-		<div className="">
+		<div className="mx-auto w-3xl">
 		  <Post components={blogStyle()}/>
 		</div>
 	)
@@ -21,10 +21,6 @@ export default async function Page({
 export async function generateStaticParams() {
 	return await getblogPosts()
 }
-
-
-
-
 // dynamicParams to false allow only staticParams
 export const dynamicParams = false
 
