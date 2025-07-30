@@ -6,15 +6,11 @@ export const matter = {
 };
 function _createMdxContent(props) {
   const _components = {
-    blockquote: "blockquote",
     img: "img",
-    li: "li",
-    ol: "ol",
     p: "p",
-    ul: "ul",
     ...props.components
   };
-  return <><_components.ol>{"\n"}<_components.li>{"First item"}{"\n"}<_components.ol>{"\n"}<_components.li>{"Indented item"}</_components.li>{"\n"}<_components.li>{"Indented item"}</_components.li>{"\n"}</_components.ol>{"\n"}</_components.li>{"\n"}<_components.li>{"Second item"}{"\n"}<_components.ol>{"\n"}<_components.li>{"hello"}</_components.li>{"\n"}<_components.li>{"wolrd"}</_components.li>{"\n"}</_components.ol>{"\n"}</_components.li>{"\n"}<_components.li>{"Third item"}{"\n"}<_components.ol>{"\n"}<_components.li>{"Indented item"}</_components.li>{"\n"}<_components.li>{"Indented item"}</_components.li>{"\n"}</_components.ol>{"\n"}</_components.li>{"\n"}<_components.li>{"Fourth item"}{"\n"}<_components.ol>{"\n"}<_components.li>{"indedted"}</_components.li>{"\n"}</_components.ol>{"\n"}</_components.li>{"\n"}</_components.ol>{"\n"}<_components.ul>{"\n"}<_components.li>{"apple"}{"\n"}<_components.ul>{"\n"}<_components.li>{"banana"}{"\n"}<_components.ul>{"\n"}<_components.li>{"grape"}</_components.li>{"\n"}</_components.ul>{"\n"}</_components.li>{"\n"}</_components.ul>{"\n"}</_components.li>{"\n"}<_components.li>{"lemon"}</_components.li>{"\n"}</_components.ul>{"\n"}<_components.blockquote>{"\n"}<_components.p>{"hello world\r\nhi new world"}</_components.p>{"\n"}</_components.blockquote>{"\n"}<_components.p><_components.img src="/sabrina_carpenter.jpg" alt="The San Juan Mountains are beautiful!" title="San Juan Mountains" /></_components.p></>;
+  return <_components.p>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n"}<_components.img src="/sabrina_carpenter.jpg" alt="The San Juan Mountains are beautiful!" title="San Juan Mountains" />{" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}</_components.p>;
 }
 export default function MDXContent(props = {}) {
   const {wrapper: MDXLayout} = props.components || ({});

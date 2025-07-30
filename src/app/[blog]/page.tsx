@@ -8,9 +8,9 @@ export default async function Page({
 }) {
 	const { blog } = await params
 	const  {default: Post, matter} = await import(`../../../mdxToJs/${blog}.jsx`);
-	console.log(matter)
 	return (
 		<div className="mx-auto w-3xl">
+			<h1 className="text-3xl capitalize underline pb-5">{matter?.title || blog }</h1>
 		  <Post components={blogStyle()}/>
 		</div>
 	)

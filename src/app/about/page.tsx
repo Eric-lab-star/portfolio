@@ -1,5 +1,13 @@
+import AespaGallary from "@/components/AespaImage"
+import Frame from "@/components/Frame";
+import React from "react";
+
+
 export default function Page() {
 	return (
-		<h1 className="prose  prose-h1">Hello world</h1>
+		<Frame>
+			<AespaGallary />
+		</Frame>
 	)
 }
+

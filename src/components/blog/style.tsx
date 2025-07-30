@@ -6,11 +6,11 @@ function H1({ children }: {children: React.ReactNode}) {
   return <h1 className="text-4xl  ">{children}</h1>
 }
 function H2({ children }: {children: React.ReactNode}) {
-  return <h1 className="text-2xl  ">{children}</h1>
+  return <h2 className="text-xl  ">{children}</h2>
 }
 
 function H3({ children }: {children: React.ReactNode}) {
-  return <h1 className="text-xl  ">{children}</h1>
+  return <h3 className="text-lg  ">{children}</h3>
 }
 
 
@@ -43,7 +43,7 @@ function Blockquote({ children }: {children: React.ReactNode}) {
 }
 
 function IMG (props: ImageProps) {
-  return <Image sizes="100vw" width={300} height={100} style={{height: 'auto'}} {...(props)} />
+  return <Image className="float-start m-5 rounded-3xl w-96 h-auto select-none " sizes="(max-with: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width={100} height={100} {...(props)}/>
 }
 
  

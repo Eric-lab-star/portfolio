@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Link from "next/link";
+import clsx from "clsx";
+import Header from "@/components/Header";
+import SideBar from "@/components/Sidebar";
+import SideBarWrapper from "@/components/SideBarWrapper";
+import CtxManager from "./StateManager";
 
 const d2coding = localFont({
 	src: [
@@ -20,25 +23,29 @@ const d2coding = localFont({
 })
 
 
-export const metadata: Metadata = {
-  title: "Dev Life",
-  description: "developer life is written here",
-};
+
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ko">
-      <body className={d2coding.className} >
-		  	<Link href="/">
-				  <h1 className="text-3xl m-3">Developer Blog</h1>
-				</Link>	
-        {children}
+      <body className={clsx(d2coding.className, "h-screen flex-col flex")} >
+			<CtxManager>
+				<Header />
+				<div className="flex-grow flex">
+					<SideBarWrapper>
+						<SideBar />
+					</SideBarWrapper>
+					<div className="p-5 flex-grow bg-yellow-300">{children}</div>
+				</div>
+			</CtxManager>
       </body>
     </html>
   );
 }
+
 
