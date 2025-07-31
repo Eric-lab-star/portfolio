@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Header from "@/components/Header";
 import SideBar from "@/components/Sidebar";
 import SideBarWrapper from "@/components/SideBarWrapper";
-import CtxManager from "./StateManager";
+import SideBarCtx from "./SideBarCtx";
 
 const d2coding = localFont({
 	src: [
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={clsx(d2coding.className, "h-screen flex-col flex")} >
-			<CtxManager>
+			<SideBarCtx>
 				<Header />
 				<div className="flex-grow flex">
 					<SideBarWrapper>
@@ -42,7 +42,7 @@ export default function RootLayout({
 					</SideBarWrapper>
 					<div className="p-5 flex-grow bg-yellow-300">{children}</div>
 				</div>
-			</CtxManager>
+			</SideBarCtx>
       </body>
     </html>
   );

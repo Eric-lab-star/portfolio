@@ -19,10 +19,11 @@ export default async function Page({
 
 // compile mdx to jsx 
 export async function generateStaticParams() {
-	return await getblogPosts()
+	return []
+	// return await getblogPosts()
 }
 // dynamicParams to false allow only staticParams
-export const dynamicParams = false
+export const dynamic = 'force-static';
 
 
 

@@ -3,10 +3,12 @@ import path from "node:path"
 import document_symbol from "../../public/document.svg"
 
 
+type PostMeta = {blog: string; defaultImg: any;} & {[key: string]: string;}
+
 export async function getblogPosts() {
 	const dir = path.join('mdxToJs')
 	const files = await readdir(dir)
-	const metaInfo = await Promise.all(
+	const metaInfo: PostMeta[] = await Promise.all(
 		files.map(async (f) => {
 		 const { matter } = await import(`../../mdxToJs/${f}`)
 		const name = path.parse(f).name

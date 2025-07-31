@@ -3,9 +3,12 @@ import { getblogPosts } from "@/utilz/blogUtilz";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
 export default async function SideBar() {
   await compileMdxToJsx();
   const posts = await getblogPosts();
+	
   return (
     <>
       {posts.map((p) => (
