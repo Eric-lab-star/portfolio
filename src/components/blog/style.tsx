@@ -43,7 +43,14 @@ function Blockquote({ children }: {children: React.ReactNode}) {
 }
 
 function IMG (props: ImageProps) {
-  return <Image className="float-start m-5 rounded-3xl w-96 h-auto select-none " sizes="(max-with: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width={100} height={100} {...(props)}/>
+  return <Image  
+		className="float-start m-5 rounded-3xl w-96 h-auto select-none " 
+		sizes="(max-with: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+		width={100} 
+		height={100} 
+		{...props}
+		alt=""
+	/>
 }
 
  

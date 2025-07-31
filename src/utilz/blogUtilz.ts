@@ -3,7 +3,8 @@ import path from "node:path"
 import document_symbol from "../../public/document.svg"
 
 
-type PostMeta = {blog: string; defaultImg: any;} & {[key: string]: string;}
+type PostMeta = {blog: string;} & {[key: string]: string;}
+
 
 export async function getblogPosts() {
 	const dir = path.join('mdxToJs')

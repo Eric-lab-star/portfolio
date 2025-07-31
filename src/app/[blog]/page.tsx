@@ -17,12 +17,14 @@ export default async function Page({
 }
 
 
-// compile mdx to jsx 
+// this function is called only at the build time.
 export async function generateStaticParams() {
-	return []
-	// return await getblogPosts()
+  const posts = await getblogPosts();
+	return posts
 }
-// dynamicParams to false allow only staticParams
+
+
+
 export const dynamic = 'force-static';
 
 
