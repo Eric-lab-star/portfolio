@@ -27,3 +27,8 @@ export async function compileMdxToJsx() {
 
 }
 
+
+
+console.log("compiling mdx to jsx...")
+await compileMdxToJsx()
+console.log("ready to use jsx")
