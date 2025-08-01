@@ -18,7 +18,7 @@ export default function Header() {
 
 	return (
 		<div className="flex space-x-5 h-14 p-5 bg-blue-300">
-			<button className="" onClick={toggleSideBarState}>
+			<button className="hover:text-blue-100" onClick={toggleSideBarState}> 
 				<Bars_3/>
 			</button>
 			<Link href="/">

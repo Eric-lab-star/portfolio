@@ -1,5 +1,5 @@
 import { blogStyle } from "@/components/blog/style";
-import { getblogPosts } from "../../utilz/blogUtilz";
+import { getblogPosts } from "../../lib/blogUtilz";
 
 export default async function Page({
 	params,
@@ -11,10 +11,11 @@ export default async function Page({
 	return (
 		<div className="mx-auto w-3xl">
 			<h1 className="text-3xl capitalize underline pb-5">{matter?.title || blog }</h1>
-		  <Post components={blogStyle()}/>
+			  <Post components={blogStyle}/>
 		</div>
 	)
 }
+
 
 // this function is called only at the build time.
 // 
@@ -23,10 +24,7 @@ export async function generateStaticParams() {
 	return posts.map((v)=> ({blog: v.blog}))
 }
 
-
-export const revalidate = 60
-
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 
 

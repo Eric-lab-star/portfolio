@@ -17,7 +17,7 @@ function H3({ children }: {children: React.ReactNode}) {
 // Paragraph
 
 function P({ children }: {children: React.ReactNode}) {
-  return <p className="my-2">{children}</p>
+  return <div className="my-2">{children}</div>
 }
 
 // lists
@@ -42,20 +42,22 @@ function Blockquote({ children }: {children: React.ReactNode}) {
   return <blockquote className="bg-amber-100 p-4 m-2 rounded-2xl">{children}</blockquote>
 }
 
-function IMG (props: ImageProps) {
-  return <Image  
-		className="float-start m-5 rounded-3xl w-96 h-auto select-none " 
-		sizes="(max-with: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-		width={100} 
-		height={100} 
-		{...props}
-		alt=""
-	/>
+
+async function IMG (props: ImageProps) {
+  return (
+		<Image  
+			className="float-start m-5 rounded-3xl w-96 h-auto select-none " 
+			sizes="(max-with: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+			width={100} 
+			height={100} 
+			{...props}
+			alt=""
+		/>
+		)
 }
 
  
-export const blogStyle = () => {
-	return {
+export const blogStyle  = {
     h1: H1,
 		h2: H2,
 		h3: H3,
@@ -66,7 +68,5 @@ export const blogStyle = () => {
 		li: Li,
 		blockquote: Blockquote,
 		img: IMG
-
-	}
 }
  

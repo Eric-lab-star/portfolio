@@ -5,7 +5,7 @@ import rehypeStarryNight from "rehype-starry-night";
 
 
 const nextConfig: NextConfig = {
-	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
+	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
 const withMDX = createMDX({

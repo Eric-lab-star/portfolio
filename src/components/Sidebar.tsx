@@ -1,4 +1,4 @@
-import { getblogPosts } from "@/utilz/blogUtilz";
+import { getblogPosts } from "@/lib/blogUtilz";
 import Image from "next/image";
 import Link from "next/link";
 

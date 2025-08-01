@@ -40,7 +40,7 @@ export default function RootLayout({
 					<SideBarWrapper>
 						<SideBar />
 					</SideBarWrapper>
-					<div className="p-5 flex-grow bg-yellow-300">{children}</div>
+					<div className="p-5 flex-grow bg-zinc-900 text-gray-300">{children}</div>
 				</div>
 			</SideBarCtx>
       </body>

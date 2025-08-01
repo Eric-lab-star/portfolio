@@ -1,10 +1,14 @@
 
-# Personal website
+# Personal website working in progress
 
-made with 
 
-- nextjs
-- framer motion
-- taillwindcss
+Tech spec
+- Nextjs
+- Framer motion
+- Taillwindcss
+- mdx
+- remark
+
+
 
 
