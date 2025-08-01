@@ -8,16 +8,17 @@ import { SideBarDispatchCtx, SideBarStateCtx } from "@/app/SideBarCtx";
 export default function Header() {
 	const sideBarDispatch = useContext(SideBarDispatchCtx)
 	const sideBarState = useContext(SideBarStateCtx)
+	const toggleSideBarState = ()=> {
+		if (sideBarState) {
+			return sideBarDispatch!({type: "close"})
+		} else {
+			return sideBarDispatch!({type: "open"})
+		}
+	}
 
 	return (
 		<div className="flex space-x-5 h-14 p-5 bg-blue-300">
-			<button className="" onClick={()=> {
-				if (sideBarState) {
-					return sideBarDispatch!({type: "close"})
-				} else {
-					return sideBarDispatch!({type: "open"})
-				}
-			}}>
+			<button className="" onClick={toggleSideBarState}>
 				<Bars_3/>
 			</button>
 			<Link href="/">

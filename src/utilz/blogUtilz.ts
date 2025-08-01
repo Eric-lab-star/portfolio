@@ -2,9 +2,7 @@ import { readdir } from "node:fs/promises"
 import path from "node:path"
 import document_symbol from "../../public/document.svg"
 
-
 type PostMeta = {blog: string;} & {[key: string]: string;}
-
 
 export async function getblogPosts() {
 	const dir = path.join('mdxToJs')
