@@ -9,7 +9,14 @@ export const metadata: Metadata = {
 export default async function Page() {
 
 	return (
-		<div > Blog home</div>
+		<div>
+			<div>Read, Write and Save</div>
+			<p>Tired of watching stupid dramas</p>
+			<p>so, I start reading books</p>
+			<p>writing codes</p>
+			<p>and now saving and sharing my record to my website</p>
+
+		</div>
 	)
 }
 

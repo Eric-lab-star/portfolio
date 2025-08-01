@@ -22,7 +22,7 @@ export default function Header() {
 				<Bars_3/>
 			</button>
 			<Link href="/">
-				<div className="text-lg">{`Read_Write_Save`}</div>
+				<div className="text-lg">{`Read_Write_Save (WIP!)`}</div>
 			</Link>
 		</div>
 	)
