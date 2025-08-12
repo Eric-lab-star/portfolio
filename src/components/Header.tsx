@@ -34,6 +34,3 @@ export default function Header() {
 	)
 }
 
-const borderTransition = {
-	ease: ["linear"]
-}

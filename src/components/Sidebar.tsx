@@ -1,4 +1,3 @@
-import js_symbol from "../../public/js_symbol.svg"
 import doc_symbol from "../../public/document.svg"
 
 import Image from "next/image";
