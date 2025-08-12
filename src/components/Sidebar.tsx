@@ -1,20 +1,20 @@
-import { getblogPosts } from "@/lib/blogUtilz";
+import js_symbol from "../../public/js_symbol.svg"
+import doc_symbol from "../../public/document.svg"
+
 import Image from "next/image";
 import Link from "next/link";
 
 
+const posts = ["js", "java", "rust", "arduino"];
 
 export default async function SideBar() {
-
-	const posts = await getblogPosts()
-
 
 	return (
 	 <>
 		 {posts.map((p) => (
 			 <Link
-				 href={p.blog}
-				 key={p.blog}
+				 href={"./" + p}
+				 key={p}
 				 className="h-10 pl-5 flex items-center space-x-5 hover:bg-amber-400"
 			 >
 				 <Image
@@ -22,9 +22,9 @@ export default async function SideBar() {
 					 width={10}
 					 height={10}
 					 className="w-5 h-auto"
-					 src={p.img || p.defaultImg}
+					 src={doc_symbol}
 				 />
-				 <div>{p.title || p.blog}</div>
+				 <div>{p.toUpperCase()}</div>
 			 </Link>
 		 ))}
 	 </>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Bars_3 from "./Bars_3";
 import { useContext } from "react";
 import { SideBarDispatchCtx, SideBarStateCtx } from "@/app/SideBarCtx";
+import { motion } from "motion/react";
 
 export default function Header() {
 	const sideBarDispatch = useContext(SideBarDispatchCtx)
@@ -22,8 +23,17 @@ export default function Header() {
 				<Bars_3/>
 			</button>
 			<Link href="/">
-				<div className="text-lg">{`Read_Write_Save (WIP!)`}</div>
+				<motion.div
+					className="text-xl border-b-2 border-b-amber-600"
+					whileHover={{borderColor:"#B03720" }}
+				>
+					{"Dare mighty things"}
+				</motion.div>
 			</Link>
 		</div>
 	)
+}
+
+const borderTransition = {
+	ease: ["linear"]
 }
